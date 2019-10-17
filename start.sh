@@ -5,4 +5,5 @@ make -j$(nproc --all) O=out \ ARCH=arm64 \ CC=clang \ CLANG_TRIPLE=aarch64-linux
 rm /root/icecold/AnyKernel2/*.zip 
 cp out/arch/arm64/boot/Image.gz-dtb /root/icecold/AnyKernel2/ 
 cd /root/icecold/AnyKernel2/
-zip -r9 IceColdR4.2-Q.zip *
+BUILD_TIME=$(date +"%Y%m%d-%T")
+zip -r9 IceColdR4.2-${BUILD_TIME}.zip *
